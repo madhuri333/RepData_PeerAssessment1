@@ -27,19 +27,19 @@ hist(Total_Steps)
 # Calculate the mean and median of total steps per day:
 meanSteps <- mean(Total_Steps)
 medianSteps <- median(Total_Steps)
-print(paste("Mean total steps taken per day: ", meanSteps))
+print(paste("Mean total steps taken per day:", meanSteps))
 ```
 
 ```
-## [1] "Mean total steps taken per day:  9354.22950819672"
+## [1] "Mean total steps taken per day: 9354.22950819672"
 ```
 
 ```r
-print(paste("Median total steps taken per day: ", medianSteps))
+print(paste("Median total steps taken per day:", medianSteps))
 ```
 
 ```
-## [1] "Median total steps taken per day:  10395"
+## [1] "Median total steps taken per day: 10395"
 ```
 
 ```r
@@ -52,11 +52,11 @@ plot(x=stepsInInterval$Interval, y=stepsInInterval$Mean_Steps, type="l", xlab="I
 
 # Find the interval with maximum steps:
 maxStepInt <- stepsInInterval[stepsInInterval$Mean_Steps == max(stepsInInterval$Mean_Steps), "Interval"]
-print(paste("The interval number that has maximum number of steps averaged across all days is ", maxStepInt))
+print(paste("The interval that has maximum number of steps averaged across all days is", maxStepInt, "-", (maxStepInt+5)))
 ```
 
 ```
-## [1] "The interval number that has maximum number of steps averaged across all days is  835"
+## [1] "The interval that has maximum number of steps averaged across all days is 835 - 840"
 ```
 
 ```r
@@ -71,11 +71,11 @@ abline(v = maxStepInt, col="Red", lwd=1)
 stepsNA <- sum(is.na(activity$steps))
 dateNA <- sum(is.na(activity$date))
 # All NA values are in steps field
-print(paste("Number of rows having NA values is ", stepsNA))
+print(paste("Number of rows having NA values is", stepsNA))
 ```
 
 ```
-## [1] "Number of rows having NA values is  2304"
+## [1] "Number of rows having NA values is 2304"
 ```
 
 ```r
@@ -96,19 +96,19 @@ hist(Total_Steps_New)
 ```r
 meanStepsNew <- mean(Total_Steps_New)
 medianStepsNew <- median(Total_Steps_New)
-print(paste("Mean total steps taken per day: ", meanStepsNew))
+print(paste("Mean total steps taken per day:", meanStepsNew))
 ```
 
 ```
-## [1] "Mean total steps taken per day:  10766.1886792453"
+## [1] "Mean total steps taken per day: 10766.1886792453"
 ```
 
 ```r
-print(paste("Median total steps taken per day: ", medianStepsNew))
+print(paste("Median total steps taken per day:", medianStepsNew))
 ```
 
 ```
-## [1] "Median total steps taken per day:  10766.1886792453"
+## [1] "Median total steps taken per day: 10766.1886792453"
 ```
 
 ```r
@@ -121,19 +121,19 @@ print("Yes mean and median values have changed.")
 ```
 
 ```r
-print(paste("Mean total steps have increased by: ", (meanStepsNew-meanSteps)))
+print(paste("Mean total steps have increased by:", (meanStepsNew-meanSteps)))
 ```
 
 ```
-## [1] "Mean total steps have increased by:  1411.95917104856"
+## [1] "Mean total steps have increased by: 1411.95917104856"
 ```
 
 ```r
-print(paste("Median total steps have increased by: ", (medianStepsNew-medianSteps)))
+print(paste("Median total steps have increased by:", (medianStepsNew-medianSteps)))
 ```
 
 ```
-## [1] "Median total steps have increased by:  371.188679245282"
+## [1] "Median total steps have increased by: 371.188679245282"
 ```
 
 ```r

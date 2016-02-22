@@ -219,16 +219,16 @@ hist(Total_Steps)
 <pre><code class="r"># Calculate the mean and median of total steps per day:
 meanSteps &lt;- mean(Total_Steps)
 medianSteps &lt;- median(Total_Steps)
-print(paste(&quot;Mean total steps taken per day: &quot;, meanSteps))
+print(paste(&quot;Mean total steps taken per day:&quot;, meanSteps))
 </code></pre>
 
-<pre><code>## [1] &quot;Mean total steps taken per day:  9354.22950819672&quot;
+<pre><code>## [1] &quot;Mean total steps taken per day: 9354.22950819672&quot;
 </code></pre>
 
-<pre><code class="r">print(paste(&quot;Median total steps taken per day: &quot;, medianSteps))
+<pre><code class="r">print(paste(&quot;Median total steps taken per day:&quot;, medianSteps))
 </code></pre>
 
-<pre><code>## [1] &quot;Median total steps taken per day:  10395&quot;
+<pre><code>## [1] &quot;Median total steps taken per day: 10395&quot;
 </code></pre>
 
 <pre><code class="r">## What is the average daily activity pattern?
@@ -240,10 +240,10 @@ plot(x=stepsInInterval$Interval, y=stepsInInterval$Mean_Steps, type=&quot;l&quot
 
 # Find the interval with maximum steps:
 maxStepInt &lt;- stepsInInterval[stepsInInterval$Mean_Steps == max(stepsInInterval$Mean_Steps), &quot;Interval&quot;]
-print(paste(&quot;The interval number that has maximum number of steps averaged across all days is &quot;, maxStepInt))
+print(paste(&quot;The interval that has maximum number of steps averaged across all days is&quot;, maxStepInt, &quot;-&quot;, (maxStepInt+5)))
 </code></pre>
 
-<pre><code>## [1] &quot;The interval number that has maximum number of steps averaged across all days is  835&quot;
+<pre><code>## [1] &quot;The interval that has maximum number of steps averaged across all days is 835 - 840&quot;
 </code></pre>
 
 <pre><code class="r">abline(v = maxStepInt, col=&quot;Red&quot;, lwd=1)
@@ -256,10 +256,10 @@ print(paste(&quot;The interval number that has maximum number of steps averaged 
 stepsNA &lt;- sum(is.na(activity$steps))
 dateNA &lt;- sum(is.na(activity$date))
 # All NA values are in steps field
-print(paste(&quot;Number of rows having NA values is &quot;, stepsNA))
+print(paste(&quot;Number of rows having NA values is&quot;, stepsNA))
 </code></pre>
 
-<pre><code>## [1] &quot;Number of rows having NA values is  2304&quot;
+<pre><code>## [1] &quot;Number of rows having NA values is 2304&quot;
 </code></pre>
 
 <pre><code class="r">activityFilled &lt;- activity
@@ -278,16 +278,16 @@ hist(Total_Steps_New)
 
 <pre><code class="r">meanStepsNew &lt;- mean(Total_Steps_New)
 medianStepsNew &lt;- median(Total_Steps_New)
-print(paste(&quot;Mean total steps taken per day: &quot;, meanStepsNew))
+print(paste(&quot;Mean total steps taken per day:&quot;, meanStepsNew))
 </code></pre>
 
-<pre><code>## [1] &quot;Mean total steps taken per day:  10766.1886792453&quot;
+<pre><code>## [1] &quot;Mean total steps taken per day: 10766.1886792453&quot;
 </code></pre>
 
-<pre><code class="r">print(paste(&quot;Median total steps taken per day: &quot;, medianStepsNew))
+<pre><code class="r">print(paste(&quot;Median total steps taken per day:&quot;, medianStepsNew))
 </code></pre>
 
-<pre><code>## [1] &quot;Median total steps taken per day:  10766.1886792453&quot;
+<pre><code>## [1] &quot;Median total steps taken per day: 10766.1886792453&quot;
 </code></pre>
 
 <pre><code class="r"># Show the change in mean, median after filling the missing values:
@@ -297,16 +297,16 @@ print(&quot;Yes mean and median values have changed.&quot;)
 <pre><code>## [1] &quot;Yes mean and median values have changed.&quot;
 </code></pre>
 
-<pre><code class="r">print(paste(&quot;Mean total steps have increased by: &quot;, (meanStepsNew-meanSteps)))
+<pre><code class="r">print(paste(&quot;Mean total steps have increased by:&quot;, (meanStepsNew-meanSteps)))
 </code></pre>
 
-<pre><code>## [1] &quot;Mean total steps have increased by:  1411.95917104856&quot;
+<pre><code>## [1] &quot;Mean total steps have increased by: 1411.95917104856&quot;
 </code></pre>
 
-<pre><code class="r">print(paste(&quot;Median total steps have increased by: &quot;, (medianStepsNew-medianSteps)))
+<pre><code class="r">print(paste(&quot;Median total steps have increased by:&quot;, (medianStepsNew-medianSteps)))
 </code></pre>
 
-<pre><code>## [1] &quot;Median total steps have increased by:  371.188679245282&quot;
+<pre><code>## [1] &quot;Median total steps have increased by: 371.188679245282&quot;
 </code></pre>
 
 <pre><code class="r">## Are there differences in activity patterns between weekdays and weekends?

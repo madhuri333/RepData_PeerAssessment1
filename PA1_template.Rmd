@@ -22,8 +22,8 @@ hist(Total_Steps)
 # Calculate the mean and median of total steps per day:
 meanSteps <- mean(Total_Steps)
 medianSteps <- median(Total_Steps)
-print(paste("Mean total steps taken per day: ", meanSteps))
-print(paste("Median total steps taken per day: ", medianSteps))
+print(paste("Mean total steps taken per day:", meanSteps))
+print(paste("Median total steps taken per day:", medianSteps))
 
 
 ## What is the average daily activity pattern?
@@ -35,7 +35,7 @@ plot(x=stepsInInterval$Interval, y=stepsInInterval$Mean_Steps, type="l", xlab="I
 
 # Find the interval with maximum steps:
 maxStepInt <- stepsInInterval[stepsInInterval$Mean_Steps == max(stepsInInterval$Mean_Steps), "Interval"]
-print(paste("The interval number that has maximum number of steps averaged across all days is ", maxStepInt))
+print(paste("The interval that has maximum number of steps averaged across all days is", maxStepInt, "-", (maxStepInt+5)))
 abline(v = maxStepInt, col="Red", lwd=1)
 
 
@@ -44,7 +44,7 @@ abline(v = maxStepInt, col="Red", lwd=1)
 stepsNA <- sum(is.na(activity$steps))
 dateNA <- sum(is.na(activity$date))
 # All NA values are in steps field
-print(paste("Number of rows having NA values is ", stepsNA))
+print(paste("Number of rows having NA values is", stepsNA))
 activityFilled <- activity
 for(i in 1:nrow(activityFilled)){
         if(is.na(activityFilled[i,"steps"])){
@@ -57,13 +57,13 @@ Total_Steps_New <- with(activityFilled, tapply(steps, date, sum))
 hist(Total_Steps_New)
 meanStepsNew <- mean(Total_Steps_New)
 medianStepsNew <- median(Total_Steps_New)
-print(paste("Mean total steps taken per day: ", meanStepsNew))
-print(paste("Median total steps taken per day: ", medianStepsNew))
+print(paste("Mean total steps taken per day:", meanStepsNew))
+print(paste("Median total steps taken per day:", medianStepsNew))
 
 # Show the change in mean, median after filling the missing values:
 print("Yes mean and median values have changed.")
-print(paste("Mean total steps have increased by: ", (meanStepsNew-meanSteps)))
-print(paste("Median total steps have increased by: ", (medianStepsNew-medianSteps)))
+print(paste("Mean total steps have increased by:", (meanStepsNew-meanSteps)))
+print(paste("Median total steps have increased by:", (medianStepsNew-medianSteps)))
 
 
 ## Are there differences in activity patterns between weekdays and weekends?
